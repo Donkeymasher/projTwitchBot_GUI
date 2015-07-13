@@ -7,7 +7,7 @@ namespace projTwitchBotVisual
 {
     class StreamCommands
     {
-        public void PingPong(String buf, System.IO.TextWriter output)
+        public void PingPong(string buf, System.IO.TextWriter output)
         {
             //Send pong reply to any ping messages
             if (buf.Contains("PING"))
@@ -17,24 +17,28 @@ namespace projTwitchBotVisual
             }
         }
 
-        public void addCommand(String buf)
+        public void addCommand(string buf)
         {
             if (Filter(buf).Contains("!NewCommand"))
             {
                 List<string> Com = new List<string>();
-                DynamicCommands D = new DynamicCommands();
-                Com = D.CommandAdd(Filter(buf).Substring(13, 5));
-               
+                int cmdLenght = Filter(buf).Length;
+                cmdLenght = cmdLenght - 13; 
+                string newCommand = Filter(buf).Substring(13, cmdLenght);
+                Com = DynamicCommands.CommandAdd(newCommand);
+                
+                FileReaderWriter.ComWriter("dyCommands.txt", Com);
+                Console.Write(newCommand);
                 //!NewCommand,!playSound
-                Console.Write(Com[0]); 
+                //Com[0]
             }
         }
 
-        public void dynamCommands(String buf)
+        public void dynamCommands(string buf)
         {
             List<string> Com = new List<string>();
-            DynamicCommands D = new DynamicCommands();
-            Com = D.rt();
+            
+            Com = DynamicCommands.rt();
 
             for (int i = 0; Filter(buf).Contains(Com[i]); i++)
             {
@@ -82,7 +86,7 @@ namespace projTwitchBotVisual
             } while (i < charList.Count);
 
             char[] text = charList.ToArray();
-            buf = new String(text);
+            buf = new string(text);
             charList = null;
             text = null;
             return buf;

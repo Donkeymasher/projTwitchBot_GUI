@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace projTwitchBotVisual
 {
-    class DynamicCommands
+    static class DynamicCommands
     {
-        private List<String> Commands = new List<string>(); 
+        private static List<String> Commands = new List<string>(); 
 
-        public List<String> CommandAdd(string NCommand)
+        public static List<String> CommandAdd(string NCommand)
         {
             Commands.Add(NCommand);
             return Commands;
         }
 
-        public List<string> rt() { return Commands; }
+        public static List<string> rt() { return Commands; }
     }
 }

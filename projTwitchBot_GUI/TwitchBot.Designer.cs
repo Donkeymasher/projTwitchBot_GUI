@@ -37,16 +37,18 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.txtChan = new System.Windows.Forms.TextBox();
-            this.btnSaveConData = new System.Windows.Forms.Button();
             this.comboConnection = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblOuthKey = new System.Windows.Forms.Label();
             this.txtOuth = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuStripTop = new System.Windows.Forms.MenuStrip();
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnServerConnection
@@ -123,15 +125,6 @@
             this.txtChan.Size = new System.Drawing.Size(147, 22);
             this.txtChan.TabIndex = 8;
             // 
-            // btnSaveConData
-            // 
-            this.btnSaveConData.Location = new System.Drawing.Point(40, 181);
-            this.btnSaveConData.Name = "btnSaveConData";
-            this.btnSaveConData.Size = new System.Drawing.Size(57, 23);
-            this.btnSaveConData.TabIndex = 9;
-            this.btnSaveConData.Text = "Save";
-            this.btnSaveConData.UseVisualStyleBackColor = true;
-            // 
             // comboConnection
             // 
             this.comboConnection.Items.AddRange(new object[] {
@@ -170,16 +163,17 @@
             this.txtOuth.TabIndex = 13;
             this.txtOuth.Visible = false;
             // 
-            // menuStrip1
+            // mnuStripTop
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commandsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(276, 28);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuStripTop.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commandsToolStripMenuItem,
+            this.connectionToolStripMenuItem});
+            this.mnuStripTop.Location = new System.Drawing.Point(0, 0);
+            this.mnuStripTop.Name = "mnuStripTop";
+            this.mnuStripTop.Size = new System.Drawing.Size(276, 28);
+            this.mnuStripTop.TabIndex = 14;
+            this.mnuStripTop.Text = "menuStrip1";
             // 
             // commandsToolStripMenuItem
             // 
@@ -204,14 +198,36 @@
             this.addCommandsToolStripMenuItem.Text = "Add Commands";
             this.addCommandsToolStripMenuItem.Click += new System.EventHandler(this.addCommandsToolStripMenuItem_Click);
             // 
+            // connectionToolStripMenuItem
+            // 
+            this.connectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.connectionToolStripMenuItem.Text = "Connection";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // frmTwitchBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 212);
+            this.ClientSize = new System.Drawing.Size(276, 218);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboConnection);
-            this.Controls.Add(this.btnSaveConData);
             this.Controls.Add(this.txtChan);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.txtServer);
@@ -223,12 +239,12 @@
             this.Controls.Add(this.btnServerConnection);
             this.Controls.Add(this.txtOuth);
             this.Controls.Add(this.lblOuthKey);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mnuStripTop);
+            this.MainMenuStrip = this.mnuStripTop;
             this.Name = "frmTwitchBot";
             this.Text = "TwitchBot";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuStripTop.ResumeLayout(false);
+            this.mnuStripTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,15 +261,17 @@
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.TextBox txtChan;
-        private System.Windows.Forms.Button btnSaveConData;
         private System.Windows.Forms.ComboBox comboConnection;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblOuthKey;
         private System.Windows.Forms.TextBox txtOuth;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnuStripTop;
         private System.Windows.Forms.ToolStripMenuItem commandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewCommandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCommandsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 

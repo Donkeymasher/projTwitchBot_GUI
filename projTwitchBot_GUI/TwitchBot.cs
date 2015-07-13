@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
+using System.IO;
 
 namespace projTwitchBotVisual
 {
@@ -26,9 +28,9 @@ namespace projTwitchBotVisual
             System.IO.TextWriter output;
 
             Connection b = new Connection();
-            System.Net.Sockets.TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
-            input = new System.IO.StreamReader(sock.GetStream());
-            output = new System.IO.StreamWriter(sock.GetStream());
+            TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
+            input = new StreamReader(sock.GetStream());
+            output = new StreamWriter(sock.GetStream());
             output.Write("PASS " + (txtOuth.Text) + "\r\n" + "NICK " + txtNick.Text + "\r\n");
             output.Flush();
 
@@ -64,13 +66,6 @@ namespace projTwitchBotVisual
             }
         }
 
-        private void btnSaveConData_Click(object sender, EventArgs e)
-        {
-
-            FileReaderWriter a = new FileReaderWriter();
-            a.Writer(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text);
-            Console.Write(a.reader());
-        }
 
         private void comboConnection_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -138,11 +133,38 @@ namespace projTwitchBotVisual
 
         private void viewCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Open another class and read from a text file display to user.
+            
         }
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Open another class and read from a text file display to user
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SFD = new SaveFileDialog();
+            SFD.Filter = "Connection Data File|*.cdf";
+            SFD.Title = "Save a text File";
+            SFD.ShowDialog();
+
+            FileReaderWriter.ConWriter(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text, SFD.FileName);
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] conData = new String[4];
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "Connection Data File|*.cdf";
+            OFD.Title = "Open Connection File";
+            OFD.ShowDialog();
+            
+            conData = FileReaderWriter.reader(OFD.FileName);
+
+            txtNick.Text = conData[0];
+            txtServer.Text = conData[1];
+            txtPort.Text = conData[2];
+            txtChan.Text = conData[3];
 
         }
     }
