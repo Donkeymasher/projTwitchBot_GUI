@@ -26,7 +26,7 @@ namespace projTwitchBotVisual
             System.IO.TextWriter output;
 
             Connection b = new Connection();
-            System.Net.Sockets.TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text);
+            System.Net.Sockets.TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
             input = new System.IO.StreamReader(sock.GetStream());
             output = new System.IO.StreamWriter(sock.GetStream());
             output.Write("PASS " + ("oauth:--InsertOwnKeyHere") + "\r\n" + "NICK " + txtNick.Text + "\r\n");
@@ -96,6 +96,8 @@ namespace projTwitchBotVisual
             txtPort.Text = "6667";
             txtServer.Visible = false;
             txtServer.Text = "irc.twitch.tv";
+            lblOuthKey.Visible = true;
+            txtOuth.Visible = true;
             if (frmState == 1) { frmState = 0; }
             Refresh();
         }
@@ -125,6 +127,9 @@ namespace projTwitchBotVisual
             txtPort.Clear();
             txtServer.Visible = true;
             txtServer.Clear();
+            lblOuthKey.Visible = false;
+            txtOuth.Visible = false;
+            txtOuth.Clear();
             Refresh();
         }
     }

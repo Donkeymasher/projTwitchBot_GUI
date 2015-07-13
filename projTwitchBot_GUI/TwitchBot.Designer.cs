@@ -40,6 +40,8 @@
             this.btnSaveConData = new System.Windows.Forms.Button();
             this.comboConnection = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblOuthKey = new System.Windows.Forms.Label();
+            this.txtOuth = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnServerConnection
@@ -145,6 +147,24 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Connection:";
             // 
+            // lblOuthKey
+            // 
+            this.lblOuthKey.AutoSize = true;
+            this.lblOuthKey.Location = new System.Drawing.Point(35, 89);
+            this.lblOuthKey.Name = "lblOuthKey";
+            this.lblOuthKey.Size = new System.Drawing.Size(43, 17);
+            this.lblOuthKey.TabIndex = 12;
+            this.lblOuthKey.Text = "Outh:";
+            this.lblOuthKey.Visible = false;
+            // 
+            // txtOuth
+            // 
+            this.txtOuth.Location = new System.Drawing.Point(98, 89);
+            this.txtOuth.Name = "txtOuth";
+            this.txtOuth.Size = new System.Drawing.Size(147, 22);
+            this.txtOuth.TabIndex = 13;
+            this.txtOuth.Visible = false;
+            // 
             // frmTwitchBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,6 +182,8 @@
             this.Controls.Add(this.lblServer);
             this.Controls.Add(this.lblBotName);
             this.Controls.Add(this.btnServerConnection);
+            this.Controls.Add(this.txtOuth);
+            this.Controls.Add(this.lblOuthKey);
             this.Name = "frmTwitchBot";
             this.Text = "TwitchBot";
             this.ResumeLayout(false);
@@ -183,6 +205,8 @@
         private System.Windows.Forms.Button btnSaveConData;
         private System.Windows.Forms.ComboBox comboConnection;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOuthKey;
+        private System.Windows.Forms.TextBox txtOuth;
     }
 }
 
