@@ -53,11 +53,11 @@ namespace ProjTwitchBotVisual
                  * :SERVER COMAND ARGS ... :DATA\r\n
                  */
 
-                //After server sends 001 command, we can set mode to bot and join a channel
+              
                 if (buf.Split(' ')[1] == "001")
                 {
                     output.Write(
-                        "MODE " + txtNick.Text + " +B\r\n" +
+                        "CAP REQ :twitch.tv/membership" + "\r\n" +
                         "JOIN " + txtChan.Text + "\r\n"
                     );
                     output.Flush();
