@@ -29,7 +29,7 @@ namespace projTwitchBotVisual
             System.Net.Sockets.TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text);
             input = new System.IO.StreamReader(sock.GetStream());
             output = new System.IO.StreamWriter(sock.GetStream());
-            output.Write("PASS " + ("oauth:xtnz5085g3kluyp22wxeu8gpkkfqi9") + "\r\n" + "NICK " + txtNick.Text + "\r\n");
+            output.Write("PASS " + ("oauth:--InsertOwnKeyHere") + "\r\n" + "NICK " + txtNick.Text + "\r\n");
             output.Flush();
 
             WinConsole a = new WinConsole();
