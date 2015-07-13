@@ -23,28 +23,29 @@ namespace projTwitchBotVisual
             {
                 List<string> Com = new List<string>();
                 int cmdLenght = Filter(buf).Length;
-                cmdLenght = cmdLenght - 13; 
+                cmdLenght = cmdLenght - 13;
                 string newCommand = Filter(buf).Substring(13, cmdLenght);
                 Com = DynamicCommands.CommandAdd(newCommand);
-                
+
                 FileReaderWriter.ComWriter("dyCommands.txt", Com);
                 Console.Write(newCommand);
-                //!NewCommand,!playSound
-                //Com[0]
             }
         }
 
         public void dynamCommands(string buf)
         {
             List<string> Com = new List<string>();
-            
-            Com = DynamicCommands.rt();
 
-            for (int i = 0; Filter(buf).Contains(Com[i]); i++)
+            Com = DynamicCommands.rt;
+            if (Filter(buf).Contains("!ListCommands"))
             {
-                Console.Write(Com[i]);
-            } 
-            Com = null;
+                for (int i = 0; Filter(buf).Contains(Com[i]); i++)
+                {
+                    Console.Write(Com[i]);
+                }
+                Com = null;
+            }
+
         }
 
         public void Ding(string buf)
@@ -61,7 +62,7 @@ namespace projTwitchBotVisual
             {
                 new SoundPlayer(@"Sounds\WTD.wav").Play();
                 //WMPLib.WindowsMediaPlayer a = new WMPLib.WindowsMediaPlayer(); //.mp3
-               // a.URL = @"Sounds\WTD.mp3";
+                // a.URL = @"Sounds\WTD.mp3";
                 //a.controls.play();
             }
         }

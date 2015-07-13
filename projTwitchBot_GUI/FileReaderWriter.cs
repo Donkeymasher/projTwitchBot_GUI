@@ -23,7 +23,7 @@ namespace projTwitchBotVisual
                         i++;
                     }
                     i = 0;
-                }       
+                }
             }
         }
 
@@ -50,16 +50,16 @@ namespace projTwitchBotVisual
             // Read the file and display it line by line.
             //using (System.IO.StreamReader sr = File.OpenText(Path))
             //{
-                //string s = "";
-                //int i = 0;
-                //while ((s = sr.()) != null)
-                //{
-                    //ConData[i] = s;
-                    //i++;
-                //}
-               // sr.Close();
+            //string s = "";
+            //int i = 0;
+            //while ((s = sr.()) != null)
+            //{
+            //ConData[i] = s;
+            //i++;
+            //}
+            // sr.Close();
             return File.ReadAllLines(Path);
         }
-            
+
     }
 }

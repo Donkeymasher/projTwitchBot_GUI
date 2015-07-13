@@ -69,20 +69,21 @@ namespace projTwitchBotVisual
 
         private void comboConnection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(comboConnection.SelectedIndex){
+            switch (comboConnection.SelectedIndex)
+            {
                 case 0: menuLayoutTwitch();
-                        break;
+                    break;
                 case 1: menuLayoutOther();
-                        break;
+                    break;
                 default: Console.Write("pick something else");
-                        break;
+                    break;
             }
         }
 
         public void menuLayoutTwitch()
         {
             System.Drawing.Point chan = lblChannel.Location;
-            System.Drawing.Point chanTxt = txtChan.Location; 
+            System.Drawing.Point chanTxt = txtChan.Location;
 
             lblPortNumber.Visible = false;
             lblChannel.Location = lblServer.Location;
@@ -111,7 +112,7 @@ namespace projTwitchBotVisual
                 txtChan.Location = txtServer.Location;
                 lblServer.Location = chan;
                 txtServer.Location = chanTxt;
-                
+
                 frmState = 1;
             }
 
@@ -133,7 +134,7 @@ namespace projTwitchBotVisual
 
         private void viewCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,7 +159,7 @@ namespace projTwitchBotVisual
             OFD.Filter = "Connection Data File|*.cdf";
             OFD.Title = "Open Connection File";
             OFD.ShowDialog();
-            
+
             conData = FileReaderWriter.reader(OFD.FileName);
 
             txtNick.Text = conData[0];

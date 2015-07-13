@@ -8,7 +8,7 @@ namespace projTwitchBotVisual
 {
     static class DynamicCommands
     {
-        private static List<String> Commands = new List<string>(); 
+        private static List<String> Commands = new List<string>();
 
         public static List<String> CommandAdd(string NCommand)
         {
@@ -16,6 +16,12 @@ namespace projTwitchBotVisual
             return Commands;
         }
 
-        public static List<string> rt() { return Commands; }
+        public static List<string> rt
+        {
+            get
+            {
+                return Commands;
+            }
+        }
     }
 }
