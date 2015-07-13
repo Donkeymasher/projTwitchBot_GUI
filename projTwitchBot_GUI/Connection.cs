@@ -3,9 +3,9 @@ using System.Net.Sockets;
 
 namespace projTwitchBotVisual
 {
-    class Connection
+    static class Connection
     {
-        public TcpClient Con(int port, string server)
+        public static TcpClient Con(int port, string server)
         {
             //Connect to irc server and get input and output text streams from TcpClient.
             TcpClient sock = new TcpClient();
