@@ -17,6 +17,32 @@ namespace projTwitchBotVisual
             }
         }
 
+        public void addCommand(String buf)
+        {
+            if (Filter(buf).Contains("!NewCommand"))
+            {
+                List<string> Com = new List<string>();
+                DynamicCommands D = new DynamicCommands();
+                Com = D.CommandAdd(Filter(buf).Substring(13, 5));
+               
+                //!NewCommand,!playSound
+                Console.Write(Com[0]); 
+            }
+        }
+
+        public void dynamCommands(String buf)
+        {
+            List<string> Com = new List<string>();
+            DynamicCommands D = new DynamicCommands();
+            Com = D.rt();
+
+            for (int i = 0; Filter(buf).Contains(Com[i]); i++)
+            {
+                Console.Write(Com[i]);
+            } 
+            Com = null;
+        }
+
         public void Ding(string buf)
         {
             if (Filter(buf).Contains("!Ding"))

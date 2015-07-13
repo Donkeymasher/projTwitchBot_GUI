@@ -29,7 +29,7 @@ namespace projTwitchBotVisual
             System.Net.Sockets.TcpClient sock = b.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
             input = new System.IO.StreamReader(sock.GetStream());
             output = new System.IO.StreamWriter(sock.GetStream());
-            output.Write("PASS " + ("oauth:--InsertOwnKeyHere") + "\r\n" + "NICK " + txtNick.Text + "\r\n");
+            output.Write("PASS " + (txtOuth.Text) + "\r\n" + "NICK " + txtNick.Text + "\r\n");
             output.Flush();
 
             WinConsole a = new WinConsole();
@@ -43,6 +43,7 @@ namespace projTwitchBotVisual
                 delta.PingPong(buf, output);
                 delta.Ding(buf);
                 delta.Dong(buf);
+                delta.addCommand(buf);
 
                 if (buf[0] != ':') continue;
 
@@ -65,8 +66,10 @@ namespace projTwitchBotVisual
 
         private void btnSaveConData_Click(object sender, EventArgs e)
         {
+
             FileReaderWriter a = new FileReaderWriter();
-            a.main(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text);
+            a.Writer(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text);
+            Console.Write(a.reader());
         }
 
         private void comboConnection_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,6 +134,16 @@ namespace projTwitchBotVisual
             txtOuth.Visible = false;
             txtOuth.Clear();
             Refresh();
+        }
+
+        private void viewCommandsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open another class and read from a text file display to user.
+        }
+
+        private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
