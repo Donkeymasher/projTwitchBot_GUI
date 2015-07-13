@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 
-namespace projTwitchBotVisual
+namespace ProjTwitchBotVisual
 {
     static class Connection
     {

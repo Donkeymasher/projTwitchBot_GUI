@@ -1,4 +1,4 @@
-﻿namespace projTwitchBotVisual
+﻿namespace ProjTwitchBotVisual
 {
     partial class frmTwitchBot
     {

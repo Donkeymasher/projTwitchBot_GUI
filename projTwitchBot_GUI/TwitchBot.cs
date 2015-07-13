@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.IO;
 
-namespace projTwitchBotVisual
+namespace ProjTwitchBotVisual
 {
     public partial class frmTwitchBot : Form
     {

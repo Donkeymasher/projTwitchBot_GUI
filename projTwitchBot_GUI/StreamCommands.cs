@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Media;
 using WMPLib;
 
-namespace projTwitchBotVisual
+namespace ProjTwitchBotVisual
 {
     class StreamCommands
     {
