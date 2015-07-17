@@ -40,11 +40,10 @@ namespace ProjTwitchBotVisual
             {
                 //Display received irc message
                 Console.WriteLine(buf);
-                StreamCommands delta = new StreamCommands();
-                delta.PingPong(buf, output);
-                delta.Ding(buf);
-                delta.Dong(buf);
-                delta.addCommand(buf);
+                StreamCommands.PingPong(buf, output);
+                StreamCommands.Ding(buf);
+                StreamCommands.Dong(buf);
+                StreamCommands.addCommand(buf);
 
                 if (buf[0] != ':') continue;
 

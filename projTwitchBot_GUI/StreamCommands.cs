@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Media;
 using WMPLib;
+using System.IO;
 
 namespace ProjTwitchBotVisual
 {
-    class StreamCommands
+    static class StreamCommands
     {
-        public void PingPong(string buf, System.IO.TextWriter output)
+        public static void PingPong(string buf, TextWriter output)
         {
             //Send pong reply to any ping messages
             if (buf.Contains("PING"))
@@ -17,7 +18,7 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public void addCommand(string buf)
+        public static void addCommand(string buf)
         {
             if (Filter(buf).Contains("!NewCommand"))
             {
@@ -32,7 +33,7 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public void dynamCommands(string buf)
+        public static void dynamCommands(string buf)
         {
             List<string> Com = new List<string>();
 
@@ -48,7 +49,7 @@ namespace ProjTwitchBotVisual
 
         }
 
-        public void Ding(string buf)
+        public static void Ding(string buf)
         {
             if (Filter(buf).Contains("!Ding"))
             {
@@ -56,7 +57,7 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public void Dong(string buf)
+        public static void Dong(string buf)
         {
             if (Filter(buf).Contains("!Dong"))
             {
@@ -67,7 +68,7 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public string Filter(string buf)//Removes all irc server related text
+        public static string Filter(string buf)//Removes all irc server related text
         {
             int i = 0, j = 0;
             List<char> charList = new List<char>();
