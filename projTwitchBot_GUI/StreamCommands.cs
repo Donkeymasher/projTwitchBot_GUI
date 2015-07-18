@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Media;
-using WMPLib;
 using System.IO;
+using System.Media;
 
 namespace ProjTwitchBotVisual
 {
