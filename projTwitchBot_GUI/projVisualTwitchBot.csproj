@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DynamicCommands.cs" />
     <Compile Include="FileReaderWriter.cs" />

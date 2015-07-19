@@ -23,7 +23,7 @@ namespace ProjTwitchBotVisual
             TcpClient sock = Connection.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
             input = new StreamReader(sock.GetStream());
             output = new StreamWriter(sock.GetStream());
-            output.Write("PASS " + (txtOuth.Text) + "\r\n" + "NICK " + txtNick.Text + "\r\n");
+            output.Write("PASS " + (txtOuth.Text) + "\r\n" + "NICK " + (txtNick.Text) + "\r\n");
             output.Flush();
 
             WinConsole a = new WinConsole();
