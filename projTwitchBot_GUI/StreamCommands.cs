@@ -21,13 +21,11 @@ namespace ProjTwitchBotVisual
         {
             if (Filter(buf).Contains("!NewCommand"))
             {
-                List<string> Com = new List<string>();
+                List<Commands> Com = new List<Commands>();
                 int cmdLenght = Filter(buf).Length;
                 cmdLenght = cmdLenght - 13;
                 string newCommand = Filter(buf).Substring(13, cmdLenght);
-                Com = DynamicCommands.CommandAdd(newCommand);
-
-                FileReaderWriter.ComWriter("dyCommands.txt", Com);
+               
                 Console.Write(newCommand);
             }
         }
