@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjTwitchBotVisual
 {
-    class Commands
+    [Serializable]
+    public class Commands
     {
         private string name;
         private bool playMusic;
@@ -23,7 +24,8 @@ namespace ProjTwitchBotVisual
         }
     }
 
-    class DynamicCommands:Commands
+    [Serializable]
+    public class DynamicCommands:Commands
     {
         private string Creator;
         private DateTime DateCreated;
@@ -34,7 +36,8 @@ namespace ProjTwitchBotVisual
             DateCreated = DateTime.Now;
         }
 
-        public DynamicCommands(string creator)
+        public DynamicCommands(string name, bool playMusic, bool respondToChat, string creator)
+            : base(name, respondToChat, playMusic)
         {
             Creator = creator;
         }

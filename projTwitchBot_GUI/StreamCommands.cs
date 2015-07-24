@@ -30,21 +30,21 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public static void dynamCommands(string buf)
-        {
-            List<string> Com = new List<string>();
+        //public static void dynamCommands(string buf)
+        //{
+        //    List<string> Com = new List<string>();
 
-            Com = DynamicCommands.rt;
-            if (Filter(buf).Contains("!ListCommands"))
-            {
-                for (int i = 0; Filter(buf).Contains(Com[i]); i++)
-                {
-                    Console.Write(Com[i]);
-                }
-                Com = null;
-            }
+        //    Com = DynamicCommands.rt;
+        //    if (Filter(buf).Contains("!ListCommands"))
+        //    {
+        //        for (int i = 0; Filter(buf).Contains(Com[i]); i++)
+        //        {
+        //            Console.Write(Com[i]);
+        //        }
+        //        Com = null;
+        //    }
 
-        }
+        //}
 
         public static void Ding(string buf)
         {

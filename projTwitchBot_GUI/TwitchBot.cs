@@ -130,7 +130,13 @@ namespace ProjTwitchBotVisual
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Open another class and read from a text file display to user
+            DynamicCommands a = new DynamicCommands("abc", true, false, "Dave");
+            SaveFileDialog SFD = new SaveFileDialog();
+            SFD.Filter = "Command File |*.bat";
+            SFD.Title = "Save command";
+            SFD.ShowDialog();
+
+            FileReaderWriter.WriteBinary(SFD.FileName, a);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)

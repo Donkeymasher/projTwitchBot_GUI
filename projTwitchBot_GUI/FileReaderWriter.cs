@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ProjTwitchBotVisual
 {
@@ -61,5 +63,29 @@ namespace ProjTwitchBotVisual
             return File.ReadAllLines(Path);
         }
 
+        public static void WriteBinary(string path, DynamicCommands a)
+        {
+            // To serialize the hashtable and its key/value pairs,   
+            // you must first open a stream for writing.  
+            // In this case, use a file stream.
+            FileStream fs = new FileStream(path, FileMode.Create);
+
+            // Construct a BinaryFormatter and use it to serialize the data to the stream.
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+            {
+                formatter.Serialize(fs, a);
+            }
+            catch (SerializationException e)
+            {
+                Console.WriteLine("Failed to serialize. Reason: " + e.Message);
+                throw;
+            }
+            finally
+            {
+                fs.Close();
+            }
+        }
+           
     }
 }
