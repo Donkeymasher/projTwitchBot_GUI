@@ -53,9 +53,10 @@
             // 
             // btnServerConnection
             // 
-            this.btnServerConnection.Location = new System.Drawing.Point(103, 181);
+            this.btnServerConnection.Location = new System.Drawing.Point(116, 226);
+            this.btnServerConnection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnServerConnection.Name = "btnServerConnection";
-            this.btnServerConnection.Size = new System.Drawing.Size(147, 23);
+            this.btnServerConnection.Size = new System.Drawing.Size(165, 29);
             this.btnServerConnection.TabIndex = 0;
             this.btnServerConnection.Text = "Connect to server";
             this.btnServerConnection.UseVisualStyleBackColor = true;
@@ -64,65 +65,69 @@
             // lblBotName
             // 
             this.lblBotName.AutoSize = true;
-            this.lblBotName.Location = new System.Drawing.Point(14, 72);
+            this.lblBotName.Location = new System.Drawing.Point(16, 90);
             this.lblBotName.Name = "lblBotName";
-            this.lblBotName.Size = new System.Drawing.Size(74, 17);
+            this.lblBotName.Size = new System.Drawing.Size(84, 20);
             this.lblBotName.TabIndex = 1;
             this.lblBotName.Text = "Bot Name:";
             // 
             // lblServer
             // 
             this.lblServer.AutoSize = true;
-            this.lblServer.Location = new System.Drawing.Point(33, 97);
+            this.lblServer.Location = new System.Drawing.Point(37, 121);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(54, 17);
+            this.lblServer.Size = new System.Drawing.Size(59, 20);
             this.lblServer.TabIndex = 2;
             this.lblServer.Text = "Server:";
             // 
             // lblChannel
             // 
             this.lblChannel.AutoSize = true;
-            this.lblChannel.Location = new System.Drawing.Point(33, 158);
+            this.lblChannel.Location = new System.Drawing.Point(37, 198);
             this.lblChannel.Name = "lblChannel";
-            this.lblChannel.Size = new System.Drawing.Size(64, 17);
+            this.lblChannel.Size = new System.Drawing.Size(72, 20);
             this.lblChannel.TabIndex = 4;
             this.lblChannel.Text = "Channel:";
             // 
             // lblPortNumber
             // 
             this.lblPortNumber.AutoSize = true;
-            this.lblPortNumber.Location = new System.Drawing.Point(45, 125);
+            this.lblPortNumber.Location = new System.Drawing.Point(51, 156);
             this.lblPortNumber.Name = "lblPortNumber";
-            this.lblPortNumber.Size = new System.Drawing.Size(38, 17);
+            this.lblPortNumber.Size = new System.Drawing.Size(42, 20);
             this.lblPortNumber.TabIndex = 3;
             this.lblPortNumber.Text = "Port:";
             // 
             // txtNick
             // 
-            this.txtNick.Location = new System.Drawing.Point(103, 69);
+            this.txtNick.Location = new System.Drawing.Point(116, 86);
+            this.txtNick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNick.Name = "txtNick";
-            this.txtNick.Size = new System.Drawing.Size(147, 22);
+            this.txtNick.Size = new System.Drawing.Size(165, 26);
             this.txtNick.TabIndex = 5;
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(103, 97);
+            this.txtServer.Location = new System.Drawing.Point(116, 121);
+            this.txtServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(147, 22);
+            this.txtServer.Size = new System.Drawing.Size(165, 26);
             this.txtServer.TabIndex = 6;
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(103, 125);
+            this.txtPort.Location = new System.Drawing.Point(116, 156);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(147, 22);
+            this.txtPort.Size = new System.Drawing.Size(165, 26);
             this.txtPort.TabIndex = 7;
             // 
             // txtChan
             // 
-            this.txtChan.Location = new System.Drawing.Point(103, 153);
+            this.txtChan.Location = new System.Drawing.Point(116, 191);
+            this.txtChan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChan.Name = "txtChan";
-            this.txtChan.Size = new System.Drawing.Size(147, 22);
+            this.txtChan.Size = new System.Drawing.Size(165, 26);
             this.txtChan.TabIndex = 8;
             // 
             // comboConnection
@@ -130,36 +135,38 @@
             this.comboConnection.Items.AddRange(new object[] {
             "Twitch ",
             "Other"});
-            this.comboConnection.Location = new System.Drawing.Point(103, 39);
+            this.comboConnection.Location = new System.Drawing.Point(116, 49);
+            this.comboConnection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboConnection.Name = "comboConnection";
-            this.comboConnection.Size = new System.Drawing.Size(147, 24);
+            this.comboConnection.Size = new System.Drawing.Size(165, 28);
             this.comboConnection.TabIndex = 10;
             this.comboConnection.SelectedIndexChanged += new System.EventHandler(this.comboConnection_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 46);
+            this.label1.Location = new System.Drawing.Point(16, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "Connection:";
             // 
             // lblOuthKey
             // 
             this.lblOuthKey.AutoSize = true;
-            this.lblOuthKey.Location = new System.Drawing.Point(40, 125);
+            this.lblOuthKey.Location = new System.Drawing.Point(45, 156);
             this.lblOuthKey.Name = "lblOuthKey";
-            this.lblOuthKey.Size = new System.Drawing.Size(43, 17);
+            this.lblOuthKey.Size = new System.Drawing.Size(48, 20);
             this.lblOuthKey.TabIndex = 12;
             this.lblOuthKey.Text = "Outh:";
             this.lblOuthKey.Visible = false;
             // 
             // txtOuth
             // 
-            this.txtOuth.Location = new System.Drawing.Point(103, 125);
+            this.txtOuth.Location = new System.Drawing.Point(116, 156);
+            this.txtOuth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOuth.Name = "txtOuth";
-            this.txtOuth.Size = new System.Drawing.Size(147, 22);
+            this.txtOuth.Size = new System.Drawing.Size(165, 26);
             this.txtOuth.TabIndex = 13;
             this.txtOuth.Visible = false;
             // 
@@ -171,7 +178,8 @@
             this.connectionToolStripMenuItem});
             this.mnuStripTop.Location = new System.Drawing.Point(0, 0);
             this.mnuStripTop.Name = "mnuStripTop";
-            this.mnuStripTop.Size = new System.Drawing.Size(276, 28);
+            this.mnuStripTop.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.mnuStripTop.Size = new System.Drawing.Size(310, 33);
             this.mnuStripTop.TabIndex = 14;
             this.mnuStripTop.Text = "menuStrip1";
             // 
@@ -181,20 +189,20 @@
             this.viewCommandsToolStripMenuItem,
             this.addCommandsToolStripMenuItem});
             this.commandsToolStripMenuItem.Name = "commandsToolStripMenuItem";
-            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
             this.commandsToolStripMenuItem.Text = "Commands";
             // 
             // viewCommandsToolStripMenuItem
             // 
             this.viewCommandsToolStripMenuItem.Name = "viewCommandsToolStripMenuItem";
-            this.viewCommandsToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
+            this.viewCommandsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.viewCommandsToolStripMenuItem.Text = "View Commands";
             this.viewCommandsToolStripMenuItem.Click += new System.EventHandler(this.viewCommandsToolStripMenuItem_Click);
             // 
             // addCommandsToolStripMenuItem
             // 
             this.addCommandsToolStripMenuItem.Name = "addCommandsToolStripMenuItem";
-            this.addCommandsToolStripMenuItem.Size = new System.Drawing.Size(189, 24);
+            this.addCommandsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
             this.addCommandsToolStripMenuItem.Text = "Add Commands";
             this.addCommandsToolStripMenuItem.Click += new System.EventHandler(this.addCommandsToolStripMenuItem_Click);
             // 
@@ -204,28 +212,28 @@
             this.loadToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.connectionToolStripMenuItem.Text = "Connection";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(123, 30);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 30);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // frmTwitchBot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 218);
+            this.ClientSize = new System.Drawing.Size(310, 272);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboConnection);
             this.Controls.Add(this.txtChan);
@@ -241,6 +249,7 @@
             this.Controls.Add(this.lblOuthKey);
             this.Controls.Add(this.mnuStripTop);
             this.MainMenuStrip = this.mnuStripTop;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmTwitchBot";
             this.Text = "TwitchBot";
             this.mnuStripTop.ResumeLayout(false);
