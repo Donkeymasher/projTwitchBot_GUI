@@ -9,9 +9,9 @@ namespace ProjTwitchBotVisual
     [Serializable]
     public class Commands
     {
-        protected string name; 
-        protected bool playMusic;
-        protected bool respondToChat;
+        protected internal string name;
+        protected internal bool playMusic;
+        protected internal bool respondToChat;
 
         public Commands()
         {
@@ -56,6 +56,7 @@ namespace ProjTwitchBotVisual
             : base(name, respondToChat, playMusic)
         {
             Creator = creator;
+            DateCreated = DateTime.Now;
             base.name = name;
             base.playMusic = playMusic;
             base.respondToChat = respondToChat;

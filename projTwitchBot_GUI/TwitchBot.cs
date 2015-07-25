@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Windows.Forms;
@@ -125,22 +126,34 @@ namespace ProjTwitchBotVisual
 
         private void viewCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DynamicCommands a = null;
+            List<DynamicCommands> a = null;
             OpenFileDialog OFD = new OpenFileDialog();
             OFD.Filter = "Command File |*.bat";
             OFD.Title = "Open Command File";
             OFD.ShowDialog();
             a = FileReaderWriter.ReadBinary(OFD.FileName);
-            a.display();
+            int i = 1;
+            do
+            {
+                a[i].display();
+                i++;
+            } while (i < a.Count);
         }
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DynamicCommands a = new DynamicCommands("abc", true, false, "Dave");
+            List<DynamicCommands> a = new List<DynamicCommands>();
             SaveFileDialog SFD = new SaveFileDialog();
             SFD.Filter = "Command File |*.bat";
             SFD.Title = "Save Command File";
             SFD.ShowDialog();
+            int i = 0;
+            do
+            {
+                DynamicCommands b = new DynamicCommands("abc", true, false, i.ToString());
+                a.Add(b);
+                i++;
+            } while (i <= 10);
 
             FileReaderWriter.WriteBinary(SFD.FileName, a);
         }
