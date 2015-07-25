@@ -9,9 +9,9 @@ namespace ProjTwitchBotVisual
     [Serializable]
     public class Commands
     {
-        private string name;
-        private bool playMusic;
-        private bool respondToChat;
+        protected string name; 
+        protected bool playMusic;
+        protected bool respondToChat;
 
         public Commands()
         {
@@ -22,6 +22,22 @@ namespace ProjTwitchBotVisual
         {
 
         }
+
+        public bool getChatStatus()
+        {
+            return respondToChat;
+        }
+
+        public bool getMusicStatus()
+        {
+            return playMusic;
+        }
+
+        public string Getname()
+        {
+            return name;
+        }
+
     }
 
     [Serializable]
@@ -40,7 +56,18 @@ namespace ProjTwitchBotVisual
             : base(name, respondToChat, playMusic)
         {
             Creator = creator;
+            base.name = name;
+            base.playMusic = playMusic;
+            base.respondToChat = respondToChat;
         }
+
+        public void display()
+        {
+            Console.WriteLine(Creator);
+            Console.WriteLine(DateCreated.ToString());
+            Console.WriteLine(base.Getname());
+        }
+
 
     }
 }

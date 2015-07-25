@@ -86,6 +86,39 @@ namespace ProjTwitchBotVisual
                 fs.Close();
             }
         }
-           
+
+        public static DynamicCommands ReadBinary(string path)
+        {
+            if (!(path == ""))
+            {
+                DynamicCommands a = null;
+
+                // Open the file containing the data that you want to deserialize.
+                FileStream fs = new FileStream(path, FileMode.Open);
+                try
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+
+                    // Deserialize the hashtable from the file and  
+                    // assign the reference to the local variable.
+                    a = (DynamicCommands)formatter.Deserialize(fs);
+                }
+                catch (SerializationException e)
+                {
+                    Console.WriteLine("Failed to deserialize. Reason: " + e.Message);
+                    throw;
+                }
+                finally
+                {
+                    fs.Close();
+                }
+                return a;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
+

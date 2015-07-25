@@ -125,7 +125,13 @@ namespace ProjTwitchBotVisual
 
         private void viewCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DynamicCommands a = null;
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "Command File |*.bat";
+            OFD.Title = "Open Command File";
+            OFD.ShowDialog();
+            a = FileReaderWriter.ReadBinary(OFD.FileName);
+            a.display();
         }
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,7 +139,7 @@ namespace ProjTwitchBotVisual
             DynamicCommands a = new DynamicCommands("abc", true, false, "Dave");
             SaveFileDialog SFD = new SaveFileDialog();
             SFD.Filter = "Command File |*.bat";
-            SFD.Title = "Save command";
+            SFD.Title = "Save Command File";
             SFD.ShowDialog();
 
             FileReaderWriter.WriteBinary(SFD.FileName, a);
