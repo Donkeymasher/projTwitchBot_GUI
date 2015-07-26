@@ -34,8 +34,6 @@ namespace ProjTwitchBotVisual
             StreamWriter standardOutput = new StreamWriter(fileStream, encoding);
             standardOutput.AutoFlush = true;
             Console.SetOut(standardOutput);
-
-            Console.WriteLine("This text you can see in console window.");
         }
 
     }

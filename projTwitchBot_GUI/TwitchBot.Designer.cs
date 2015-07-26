@@ -252,6 +252,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmTwitchBot";
             this.Text = "TwitchBot";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTwitchBot_FormClosing);
             this.mnuStripTop.ResumeLayout(false);
             this.mnuStripTop.PerformLayout();
             this.ResumeLayout(false);

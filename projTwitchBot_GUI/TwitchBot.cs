@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ProjTwitchBotVisual
 {
@@ -17,10 +18,16 @@ namespace ProjTwitchBotVisual
 
         private void btnServerConnection_Click(object sender, EventArgs e)
         {
+            Thread stuff = new Thread(ircLoop);
+            stuff.Start();
+        }
+
+        public void ircLoop()
+        {
             string buf;
             TextReader input;
             TextWriter output;
-    
+
             TcpClient sock = Connection.Con(Convert.ToInt32(txtPort.Text), txtServer.Text);
             input = new StreamReader(sock.GetStream());
             output = new StreamWriter(sock.GetStream());
@@ -29,7 +36,8 @@ namespace ProjTwitchBotVisual
 
             WinConsole a = new WinConsole();
             a.Main();
-            this.Visible = false;
+
+            //this.Visible = false;
             for (buf = input.ReadLine(); ; buf = input.ReadLine())
             {
                 //Display received irc message
@@ -46,7 +54,7 @@ namespace ProjTwitchBotVisual
                  * :SERVER COMAND ARGS ... :DATA\r\n
                  */
 
-              
+
                 if (buf.Split(' ')[1] == "001")
                 {
                     output.Write(
@@ -183,6 +191,11 @@ namespace ProjTwitchBotVisual
             txtPort.Text = conData[2];
             txtChan.Text = conData[3];
 
+        }
+
+        private void frmTwitchBot_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
