@@ -35,6 +35,7 @@ namespace ProjTwitchBotVisual
             output.Flush();
 
             WinConsole a = new WinConsole();
+            FileReaderWriter.sql();
             a.Main();
 
             //this.Visible = false;
