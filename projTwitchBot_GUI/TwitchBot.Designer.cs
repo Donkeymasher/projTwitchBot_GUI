@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTwitchBot));
             this.btnServerConnection = new System.Windows.Forms.Button();
             this.lblBotName = new System.Windows.Forms.Label();
             this.lblServer = new System.Windows.Forms.Label();
@@ -248,6 +249,7 @@
             this.Controls.Add(this.txtOuth);
             this.Controls.Add(this.lblOuthKey);
             this.Controls.Add(this.mnuStripTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuStripTop;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmTwitchBot";
