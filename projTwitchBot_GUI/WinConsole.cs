@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Text;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -35,6 +34,5 @@ namespace ProjTwitchBotVisual
             standardOutput.AutoFlush = true;
             Console.SetOut(standardOutput);
         }
-
     }
 }
