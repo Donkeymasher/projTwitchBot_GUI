@@ -113,15 +113,15 @@ namespace ProjTwitchBotVisual
                 return null;
             }
         }
-        
-        public static void sql()
+
+        public static void CreateSqliteDatabase()
         {
-            SQLiteConnection.CreateFile("MyDatabase.sqlite");
-            SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
+            SQLiteConnection.CreateFile("BotBase.sqlite");
+            SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
             m_dbConnection.Open();
 
             string sql = "create table highscores (name Varchar(20), score int)";
-            
+
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             command.ExecuteNonQuery();
 
@@ -144,6 +144,24 @@ namespace ProjTwitchBotVisual
 
             m_dbConnection.Close();
         }
+
+        public static SQLiteConnection databaseConnection()
+        {
+            SQLiteConnection.CreateFile("BotBase.sqlite");
+            SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
+            return m_dbConnection;
+        }
+
+        public static void ExecuteCommand(SQLiteConnection m_dbConnection, string sql)
+        {
+            m_dbConnection.Open();
+
+            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            command.ExecuteNonQuery();
+
+            m_dbConnection.Close();
+        }
     }
 }
+
 

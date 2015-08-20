@@ -43,18 +43,20 @@
             this.lblOuthKey = new System.Windows.Forms.Label();
             this.txtOuth = new System.Windows.Forms.TextBox();
             this.mnuStripTop = new System.Windows.Forms.MenuStrip();
-            this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChatModsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStripTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnServerConnection
             // 
-            this.btnServerConnection.Location = new System.Drawing.Point(116, 226);
+            this.btnServerConnection.Location = new System.Drawing.Point(133, 224);
             this.btnServerConnection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnServerConnection.Name = "btnServerConnection";
             this.btnServerConnection.Size = new System.Drawing.Size(165, 29);
@@ -66,7 +68,7 @@
             // lblBotName
             // 
             this.lblBotName.AutoSize = true;
-            this.lblBotName.Location = new System.Drawing.Point(16, 90);
+            this.lblBotName.Location = new System.Drawing.Point(33, 88);
             this.lblBotName.Name = "lblBotName";
             this.lblBotName.Size = new System.Drawing.Size(84, 20);
             this.lblBotName.TabIndex = 1;
@@ -75,7 +77,7 @@
             // lblServer
             // 
             this.lblServer.AutoSize = true;
-            this.lblServer.Location = new System.Drawing.Point(37, 121);
+            this.lblServer.Location = new System.Drawing.Point(54, 119);
             this.lblServer.Name = "lblServer";
             this.lblServer.Size = new System.Drawing.Size(59, 20);
             this.lblServer.TabIndex = 2;
@@ -84,7 +86,7 @@
             // lblChannel
             // 
             this.lblChannel.AutoSize = true;
-            this.lblChannel.Location = new System.Drawing.Point(37, 198);
+            this.lblChannel.Location = new System.Drawing.Point(54, 196);
             this.lblChannel.Name = "lblChannel";
             this.lblChannel.Size = new System.Drawing.Size(72, 20);
             this.lblChannel.TabIndex = 4;
@@ -93,7 +95,7 @@
             // lblPortNumber
             // 
             this.lblPortNumber.AutoSize = true;
-            this.lblPortNumber.Location = new System.Drawing.Point(51, 156);
+            this.lblPortNumber.Location = new System.Drawing.Point(68, 154);
             this.lblPortNumber.Name = "lblPortNumber";
             this.lblPortNumber.Size = new System.Drawing.Size(42, 20);
             this.lblPortNumber.TabIndex = 3;
@@ -101,7 +103,7 @@
             // 
             // txtNick
             // 
-            this.txtNick.Location = new System.Drawing.Point(116, 86);
+            this.txtNick.Location = new System.Drawing.Point(133, 84);
             this.txtNick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(165, 26);
@@ -109,7 +111,7 @@
             // 
             // txtServer
             // 
-            this.txtServer.Location = new System.Drawing.Point(116, 121);
+            this.txtServer.Location = new System.Drawing.Point(133, 119);
             this.txtServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(165, 26);
@@ -117,7 +119,7 @@
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(116, 156);
+            this.txtPort.Location = new System.Drawing.Point(133, 154);
             this.txtPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(165, 26);
@@ -125,7 +127,7 @@
             // 
             // txtChan
             // 
-            this.txtChan.Location = new System.Drawing.Point(116, 191);
+            this.txtChan.Location = new System.Drawing.Point(133, 189);
             this.txtChan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtChan.Name = "txtChan";
             this.txtChan.Size = new System.Drawing.Size(165, 26);
@@ -136,7 +138,7 @@
             this.comboConnection.Items.AddRange(new object[] {
             "Twitch ",
             "Other"});
-            this.comboConnection.Location = new System.Drawing.Point(116, 49);
+            this.comboConnection.Location = new System.Drawing.Point(133, 47);
             this.comboConnection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboConnection.Name = "comboConnection";
             this.comboConnection.Size = new System.Drawing.Size(165, 28);
@@ -146,7 +148,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 58);
+            this.label1.Location = new System.Drawing.Point(33, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 11;
@@ -155,7 +157,7 @@
             // lblOuthKey
             // 
             this.lblOuthKey.AutoSize = true;
-            this.lblOuthKey.Location = new System.Drawing.Point(45, 156);
+            this.lblOuthKey.Location = new System.Drawing.Point(62, 154);
             this.lblOuthKey.Name = "lblOuthKey";
             this.lblOuthKey.Size = new System.Drawing.Size(48, 20);
             this.lblOuthKey.TabIndex = 12;
@@ -164,7 +166,7 @@
             // 
             // txtOuth
             // 
-            this.txtOuth.Location = new System.Drawing.Point(116, 156);
+            this.txtOuth.Location = new System.Drawing.Point(133, 154);
             this.txtOuth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOuth.Name = "txtOuth";
             this.txtOuth.Size = new System.Drawing.Size(165, 26);
@@ -175,66 +177,82 @@
             // 
             this.mnuStripTop.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commandsToolStripMenuItem,
-            this.connectionToolStripMenuItem});
+            this.CommandsToolStripMenuItem,
+            this.ConnectionToolStripMenuItem,
+            this.ChatModsToolStripMenuItem});
             this.mnuStripTop.Location = new System.Drawing.Point(0, 0);
             this.mnuStripTop.Name = "mnuStripTop";
             this.mnuStripTop.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuStripTop.Size = new System.Drawing.Size(310, 33);
+            this.mnuStripTop.Size = new System.Drawing.Size(357, 33);
             this.mnuStripTop.TabIndex = 14;
             this.mnuStripTop.Text = "menuStrip1";
             // 
-            // commandsToolStripMenuItem
+            // CommandsToolStripMenuItem
             // 
-            this.commandsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CommandsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewCommandsToolStripMenuItem,
             this.addCommandsToolStripMenuItem});
-            this.commandsToolStripMenuItem.Name = "commandsToolStripMenuItem";
-            this.commandsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
-            this.commandsToolStripMenuItem.Text = "Commands";
+            this.CommandsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CommandsToolStripMenuItem.Name = "CommandsToolStripMenuItem";
+            this.CommandsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.CommandsToolStripMenuItem.Text = "Commands";
             // 
             // viewCommandsToolStripMenuItem
             // 
             this.viewCommandsToolStripMenuItem.Name = "viewCommandsToolStripMenuItem";
-            this.viewCommandsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.viewCommandsToolStripMenuItem.Size = new System.Drawing.Size(231, 30);
             this.viewCommandsToolStripMenuItem.Text = "View Commands";
             this.viewCommandsToolStripMenuItem.Click += new System.EventHandler(this.viewCommandsToolStripMenuItem_Click);
             // 
             // addCommandsToolStripMenuItem
             // 
             this.addCommandsToolStripMenuItem.Name = "addCommandsToolStripMenuItem";
-            this.addCommandsToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.addCommandsToolStripMenuItem.Size = new System.Drawing.Size(231, 30);
             this.addCommandsToolStripMenuItem.Text = "Add Commands";
             this.addCommandsToolStripMenuItem.Click += new System.EventHandler(this.addCommandsToolStripMenuItem_Click);
             // 
-            // connectionToolStripMenuItem
+            // ConnectionToolStripMenuItem
             // 
-            this.connectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ConnectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
-            this.connectionToolStripMenuItem.Text = "Connection";
+            this.ConnectionToolStripMenuItem.Name = "ConnectionToolStripMenuItem";
+            this.ConnectionToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
+            this.ConnectionToolStripMenuItem.Text = "Connection";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(123, 30);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 30);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(136, 30);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // ChatModsToolStripMenuItem
+            // 
+            this.ChatModsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addModToolStripMenuItem});
+            this.ChatModsToolStripMenuItem.Name = "ChatModsToolStripMenuItem";
+            this.ChatModsToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
+            this.ChatModsToolStripMenuItem.Text = "Chat Mods";
+            // 
+            // addModToolStripMenuItem
+            // 
+            this.addModToolStripMenuItem.Name = "addModToolStripMenuItem";
+            this.addModToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.addModToolStripMenuItem.Text = "Add Mod";
             // 
             // frmTwitchBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 272);
+            this.ClientSize = new System.Drawing.Size(357, 272);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboConnection);
             this.Controls.Add(this.txtChan);
@@ -278,12 +296,14 @@
         private System.Windows.Forms.Label lblOuthKey;
         private System.Windows.Forms.TextBox txtOuth;
         private System.Windows.Forms.MenuStrip mnuStripTop;
-        private System.Windows.Forms.ToolStripMenuItem commandsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CommandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewCommandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCommandsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConnectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChatModsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addModToolStripMenuItem;
     }
 }
 
