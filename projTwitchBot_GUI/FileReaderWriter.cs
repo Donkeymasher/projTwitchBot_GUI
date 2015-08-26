@@ -152,6 +152,13 @@ namespace ProjTwitchBotVisual
             {
                 SQLiteConnection.CreateFile("BotBase.sqlite");
                 SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
+
+                string sql = "create table streamMods (name Text(200) NOT NULL, PRIMARY KEY (name))";
+                //string sql = "create table highscores (name Varchar(20), score int)";
+                m_dbConnection.Open();
+                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                command.ExecuteNonQuery();
+                m_dbConnection.Close();
                 return m_dbConnection;
             }
         }

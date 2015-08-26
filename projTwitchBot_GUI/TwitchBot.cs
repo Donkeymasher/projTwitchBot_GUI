@@ -9,7 +9,8 @@ namespace ProjTwitchBotVisual
 {
     public partial class frmTwitchBot : Form
     {
-        int frmState = 1;
+        private int frmState = 1;
+
         public frmTwitchBot()
         {
             InitializeComponent();
@@ -35,7 +36,6 @@ namespace ProjTwitchBotVisual
             output.Flush();
 
             WinConsole a = new WinConsole();
-            FileReaderWriter.CommandTable(FileReaderWriter.databaseConnection());
             a.Main();
 
             //this.Visible = false;
@@ -169,34 +169,53 @@ namespace ProjTwitchBotVisual
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog SFD = new SaveFileDialog();
-            SFD.Filter = "Connection Data File|*.cdf";
-            SFD.Title = "Save a text File";
-            SFD.ShowDialog();
+            try 
+            { 
+                SaveFileDialog SFD = new SaveFileDialog();
+                SFD.Filter = "Connection Data File|*.cdf";
+                SFD.Title = "Save a text File";
+                SFD.ShowDialog();
+                FileReaderWriter.ConWriter(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text, SFD.FileName);
+            } 
+            catch(System.ArgumentException)
+            {
 
-            FileReaderWriter.ConWriter(Convert.ToInt32(txtPort.Text), txtNick.Text, txtServer.Text, txtChan.Text, SFD.FileName);
+            }  
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] conData = new String[4];
-            OpenFileDialog OFD = new OpenFileDialog();
-            OFD.Filter = "Connection Data File|*.cdf";
-            OFD.Title = "Open Connection File";
-            OFD.ShowDialog();
+            try
+            {
+                string[] conData = new String[4];
+                OpenFileDialog OFD = new OpenFileDialog();
+                OFD.Filter = "Connection Data File|*.cdf";
+                OFD.Title = "Open Connection File";
+                OFD.ShowDialog();
 
-            conData = FileReaderWriter.reader(OFD.FileName);
+                conData = FileReaderWriter.reader(OFD.FileName);
 
-            txtNick.Text = conData[0];
-            txtServer.Text = conData[1];
-            txtPort.Text = conData[2];
-            txtChan.Text = conData[3];
-
+                txtNick.Text = conData[0];
+                txtServer.Text = conData[1];
+                txtPort.Text = conData[2];
+                txtChan.Text = conData[3];
+            }
+            catch(System.ArgumentException)
+            { 
+            
+            }
         }
 
         private void frmTwitchBot_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void addModToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmModSelection a = new frmModSelection();
+            FileReaderWriter.databaseConnection();
+            a.Visible = true;
         }
     }
 }

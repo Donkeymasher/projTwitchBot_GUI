@@ -118,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamCommands.cs" />
     <Compile Include="WinConsole.cs" />
+    <EmbeddedResource Include="frmModSelection.resx">
+      <DependentUpon>frmModSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TwitchBot.resx">
       <DependentUpon>TwitchBot.cs</DependentUpon>
     </EmbeddedResource>

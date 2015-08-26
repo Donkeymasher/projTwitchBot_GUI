@@ -183,7 +183,7 @@
             this.mnuStripTop.Location = new System.Drawing.Point(0, 0);
             this.mnuStripTop.Name = "mnuStripTop";
             this.mnuStripTop.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuStripTop.Size = new System.Drawing.Size(357, 33);
+            this.mnuStripTop.Size = new System.Drawing.Size(385, 33);
             this.mnuStripTop.TabIndex = 14;
             this.mnuStripTop.Text = "menuStrip1";
             // 
@@ -247,12 +247,13 @@
             this.addModToolStripMenuItem.Name = "addModToolStripMenuItem";
             this.addModToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.addModToolStripMenuItem.Text = "Add Mod";
+            this.addModToolStripMenuItem.Click += new System.EventHandler(this.addModToolStripMenuItem_Click);
             // 
             // frmTwitchBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 272);
+            this.ClientSize = new System.Drawing.Size(385, 272);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboConnection);
             this.Controls.Add(this.txtChan);
