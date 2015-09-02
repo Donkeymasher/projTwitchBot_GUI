@@ -46,7 +46,7 @@ namespace ProjTwitchBotVisual
                 StreamCommands.PingPong(buf, output);
                 StreamCommands.Ding(buf);
                 StreamCommands.Dong(buf);
-                StreamCommands.addCommand(buf);
+                //StreamCommands.addCommand(buf, output);
 
                 if (buf[0] != ':') continue;
 
@@ -60,6 +60,8 @@ namespace ProjTwitchBotVisual
                 {
                     output.Write(
                         "CAP REQ :twitch.tv/membership" + "\r\n" +
+                        "CAP REQ :twitch.tv/commands" + "\r\n" +
+                        "CAP REQ :twitch.tv/tags" + "\r\n" +
                         "JOIN " + txtChan.Text + "\r\n"
                     );
                     output.Flush();
@@ -151,20 +153,7 @@ namespace ProjTwitchBotVisual
 
         private void addCommandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<DynamicCommands> a = new List<DynamicCommands>();
-            SaveFileDialog SFD = new SaveFileDialog();
-            SFD.Filter = "Command File |*.bat";
-            SFD.Title = "Save Command File";
-            SFD.ShowDialog();
-            int i = 0;
-            do
-            {
-                DynamicCommands b = new DynamicCommands("abc", true, false, i.ToString());
-                a.Add(b);
-                i++;
-            } while (i <= 10);
 
-            FileReaderWriter.WriteBinary(SFD.FileName, a);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)

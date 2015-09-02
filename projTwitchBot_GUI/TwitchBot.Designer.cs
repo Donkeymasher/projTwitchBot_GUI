@@ -171,6 +171,7 @@
             this.txtOuth.Name = "txtOuth";
             this.txtOuth.Size = new System.Drawing.Size(165, 26);
             this.txtOuth.TabIndex = 13;
+            this.txtOuth.PasswordChar = '*';
             this.txtOuth.Visible = false;
             // 
             // mnuStripTop
