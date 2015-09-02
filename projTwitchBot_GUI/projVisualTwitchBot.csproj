@@ -155,7 +155,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Service References\App.config" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="WMPLib">
