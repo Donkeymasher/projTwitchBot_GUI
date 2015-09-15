@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Media;
+using System.Windows.Forms;
 
 namespace ProjTwitchBotVisual
 {
@@ -17,18 +18,35 @@ namespace ProjTwitchBotVisual
             }
         }
 
-        public static void addCommand(string buf)
-        {
-            if (Filter(buf).Contains("!NewCommand"))
-            {
-                List<Commands> Com = new List<Commands>();
-                int cmdLenght = Filter(buf).Length;
-                cmdLenght = cmdLenght - 13;
-                string newCommand = Filter(buf).Substring(13, cmdLenght);
-               
-                Console.Write(newCommand);
-            }
-        }
+        //public static void addCommand(string buf, TextWriter output)
+        //{
+        //    string sql = "stuff";
+        //    if (Filter(buf).Contains("!NewCommand"))
+        //    {
+        //        try
+        //        {
+        //            int ddpos = buf.IndexOf(":");
+        //            int expos = buf.IndexOf("!");
+        //            output.Write(buf.Replace("!NewCommand", "/w " + buf.Substring((ddpos + 1), (expos - 1)) + " What is the name of the command?" + "\r\n"));
+        //            Console.Write(buf.Replace("!NewCommand", "/w " + buf.Substring((ddpos + 1), (expos - 1)) + " What is the name of the command?" + "\r\n"));
+        //            output.Flush();
+        //            //sql = "insert into streamCommands (creator_name, command_name) values ('" + buf.Substring((ddpos + 1), (expos - 1)) + "')";
+        //            //FileReaderWriter.ExecuteCommand(FileReaderWriter.databaseConnection(), sql);
+                    
+        //        }
+        //        catch (System.Data.SQLite.SQLiteException)
+        //        {
+        //            MessageBox.Show("The SQL database has encountered an error, please try again");
+        //        }
+        //        //List<DynamicCommands> Com = new List<DynamicCommands>();
+        //        //int cmdLenght = Filter(buf).Length;
+        //        //cmdLenght = cmdLenght - 13;
+        //        //string newCommand = Filter(buf).Substring(13, cmdLenght);
+
+        //        //Console.Write(newCommand);
+        //        //Com[1].display();
+        //    }
+        //}
 
         //public static void dynamCommands(string buf)
         //{

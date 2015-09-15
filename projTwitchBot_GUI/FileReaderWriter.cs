@@ -113,37 +113,80 @@ namespace ProjTwitchBotVisual
                 return null;
             }
         }
-        
-        public static void sql()
-        {
-            SQLiteConnection.CreateFile("MyDatabase.sqlite");
-            SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
-            m_dbConnection.Open();
 
-            string sql = "create table highscores (name Varchar(20), score int)";
-            
+        //public static void CreateSqliteDatabase()
+        //{
+        //    SQLiteConnection.CreateFile("BotBase.sqlite");
+        //    SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
+        //    string sql = "create table highscores (name Varchar(20), score int)";
+
+        //    SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+        //    command.ExecuteNonQuery();
+
+        //    sql = "create table commands (name Varchar(45), score int)";
+
+        //    command = new SQLiteCommand(sql, m_dbConnection);
+        //    command.ExecuteNonQuery();
+
+        //    sql = "insert into highscores (name, score) values ('Me', 3000)";
+        //    command = new SQLiteCommand(sql, m_dbConnection);
+        //    command.ExecuteNonQuery();
+
+        //    sql = "insert into highscores (name, score) values ('Myself', 6000)";
+        //    command = new SQLiteCommand(sql, m_dbConnection);
+        //    command.ExecuteNonQuery();
+
+        //    sql = "insert into highscores (name, score) values ('And I', 9001)";
+        //    command = new SQLiteCommand(sql, m_dbConnection);
+        //    command.ExecuteNonQuery();
+
+        //    m_dbConnection.Close();
+        //}
+
+        public static SQLiteConnection databaseConnection()
+        {
+            if (File.Exists("BotBase.sqlite"))
+            {
+                SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
+                return m_dbConnection;
+            }
+            else
+            {
+                SQLiteConnection.CreateFile("BotBase.sqlite");
+                SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=BotBase.sqlite;Version=3;");
+
+                string sql = "create table streamMods (" +
+                                    "mod_username TEXT(200) NOT NULL PRIMARY KEY," + 
+                                    "mod_status TEXT(5)" +
+                             ")";
+     
+                m_dbConnection.Open();
+                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                command.ExecuteNonQuery();
+
+                sql = "create table streamCommands (" +
+                            "command_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," + 
+                            "command_name TEXT(75) NOT NULL," + 
+                            "creator_name TEXT(200) NOT NULL," +
+                            "play_music TEXT(5) NOT NULL," +
+                            "chat_response TEXT(5) NOT NULL," +
+                            "FOREIGN KEY(creator_name) REFERENCES streamMods(mod_username)" +
+                       ")";
+
+                command = new SQLiteCommand(sql, m_dbConnection);
+                command.ExecuteNonQuery();
+                m_dbConnection.Close();
+                return m_dbConnection;
+            }
+        }
+
+        public static void ExecuteCommand(SQLiteConnection m_dbConnection, string sql)
+        {
+            m_dbConnection.Open();
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             command.ExecuteNonQuery();
-
-            sql = "create table commands (name Varchar(45), score int)";
-
-            command = new SQLiteCommand(sql, m_dbConnection);
-            command.ExecuteNonQuery();
-
-            sql = "insert into highscores (name, score) values ('Me', 3000)";
-            command = new SQLiteCommand(sql, m_dbConnection);
-            command.ExecuteNonQuery();
-
-            sql = "insert into highscores (name, score) values ('Myself', 6000)";
-            command = new SQLiteCommand(sql, m_dbConnection);
-            command.ExecuteNonQuery();
-
-            sql = "insert into highscores (name, score) values ('And I', 9001)";
-            command = new SQLiteCommand(sql, m_dbConnection);
-            command.ExecuteNonQuery();
-
-            m_dbConnection.Close();
         }
     }
 }
+
 
