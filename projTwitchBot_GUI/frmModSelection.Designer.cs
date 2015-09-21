@@ -37,24 +37,26 @@
             // lblModName
             // 
             this.lblModName.AutoSize = true;
-            this.lblModName.Location = new System.Drawing.Point(12, 24);
+            this.lblModName.Location = new System.Drawing.Point(11, 19);
             this.lblModName.Name = "lblModName";
-            this.lblModName.Size = new System.Drawing.Size(86, 20);
+            this.lblModName.Size = new System.Drawing.Size(76, 17);
             this.lblModName.TabIndex = 0;
             this.lblModName.Text = "Mod Name";
             // 
             // txtModName
             // 
-            this.txtModName.Location = new System.Drawing.Point(110, 18);
+            this.txtModName.Location = new System.Drawing.Point(98, 14);
+            this.txtModName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModName.Name = "txtModName";
-            this.txtModName.Size = new System.Drawing.Size(107, 26);
+            this.txtModName.Size = new System.Drawing.Size(96, 22);
             this.txtModName.TabIndex = 1;
             // 
             // btnAddMod
             // 
-            this.btnAddMod.Location = new System.Drawing.Point(52, 61);
+            this.btnAddMod.Location = new System.Drawing.Point(46, 49);
+            this.btnAddMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddMod.Name = "btnAddMod";
-            this.btnAddMod.Size = new System.Drawing.Size(104, 32);
+            this.btnAddMod.Size = new System.Drawing.Size(92, 26);
             this.btnAddMod.TabIndex = 2;
             this.btnAddMod.Text = "Add Mod";
             this.btnAddMod.UseVisualStyleBackColor = true;
@@ -62,13 +64,14 @@
             // 
             // frmModSelection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 105);
+            this.ClientSize = new System.Drawing.Size(284, 84);
             this.Controls.Add(this.btnAddMod);
             this.Controls.Add(this.txtModName);
             this.Controls.Add(this.lblModName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmModSelection";
             this.Text = "Add Mod";
             this.ResumeLayout(false);

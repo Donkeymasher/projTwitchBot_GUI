@@ -23,7 +23,7 @@ namespace ProjTwitchBotVisual
             
             try
             {
-                sql = "insert into streamMods (name) values ('" + txtModName.Text + "')";
+                sql = "insert into streamMods (mod_username) values ('" + txtModName.Text + "')";
                 FileReaderWriter.ExecuteCommand(FileReaderWriter.databaseConnection(), sql);
                 frmModSelection.ActiveForm.Close();
             }
